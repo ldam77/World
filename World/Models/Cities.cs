@@ -43,11 +43,15 @@ namespace World.Models
     }
     public static List<City> GetAll()
     {
+      return MakeList(@"SELECT * FROM city;");
+    }
+    public static List<City> MakeList(string commandText)
+    {
       List<City> allCities = new List<City> {};
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM city;";
+      cmd.CommandText = commandText;
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
