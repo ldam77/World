@@ -1,0 +1,45 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Welcome To Cities Data</h1>
+
+<ul>
+  <div class="row col-name">
+    <div class="col-md-2">
+      City ID
+    </div>
+    <div class="col-md-3">
+      City
+    </div>
+    <div class="col-md-2">
+      Country Code
+    </div>
+    <div class="col-md-3">
+      District
+    </div>
+    <div class="col-md-2">
+      Population
+    </div>
+  </div>
+  @foreach (var city in Model)
+  {
+    <div class="row">
+      <div class="col-md-1">
+        @city.GetCityId()
+      </div>
+      <div class="col-md-4">
+        @city.GetCityName()
+      </div>
+      <div class="col-md-2">
+        @city.GetCountryCode()
+      </div>
+      <div class="col-md-3">
+        @city.GetCityDistrict()
+      </div>
+      <div class="col-md-2">
+        @city.GetCityPopulation()
+      </div>
+    </div>
+  }
+</ul>

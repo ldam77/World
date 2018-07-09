@@ -37,7 +37,7 @@ namespace World.Models
     {
       return district;
     }
-    public string GetCityPopulation()
+    public int GetCityPopulation()
     {
       return population;
     }

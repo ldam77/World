@@ -1,0 +1,51 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Welcome To Countries Data</h1>
+
+<ul>
+  <div class="row col-name">
+    <div class="col-md-2">
+      Country
+    </div>
+    <div class="col-md-2">
+      Code
+    </div>
+    <div class="col-md-2">
+      Continent
+    </div>
+    <div class="col-md-2">
+      Area
+    </div>
+    <div class="col-md-2">
+      Population
+    </div>
+    <div class="col-md-2">
+      GNP
+    </div>
+  </div>
+  @foreach (var country in Model)
+  {
+    <div class="row">
+      <div class="col-md-2">
+        @country.GetCountryName()
+      </div>
+      <div class="col-md-2">
+        @country.GetCountryCode()
+      </div>
+      <div class="col-md-2">
+        @country.GetCountryContinent()
+      </div>
+      <div class="col-md-2">
+        @country.GetCountryArea()
+      </div>
+      <div class="col-md-2">
+        @country.GetCountryPopulation()
+      </div>
+      <div class="col-md-2">
+        @country.GetCountryGnp()
+      </div>
+    </div>
+  }
+</ul>
