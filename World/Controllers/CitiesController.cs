@@ -21,11 +21,18 @@ namespace World.Controllers
       return View();
     }
     [HttpPost("/cities")]
-    public ActionResult SearchCities(string citySearch)
+    public ActionResult SearchCities(string citySearch, string comparison, string populationSearch)
     {
-
-      string commandText = @"SELECT * FROM city WHERE Name = '" + citySearch + "';";
-      Console.WriteLine(commandText);
+      int popSearch = int.Parse(populationSearch);
+      string commandText = "";
+      if (!string.IsNullOrWhiteSpace(Request.Form["citySearch"]))
+      {
+      commandText = @"SELECT * FROM city WHERE Name = '" + citySearch + "';";
+      }
+      else
+      {
+        commandText = @"SELECT * FROM city WHERE population" + comparison + popSearch + ";";
+      }
       return View("Index", City.MakeList(commandText));
     }
   }
