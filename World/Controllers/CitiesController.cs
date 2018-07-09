@@ -21,7 +21,7 @@ namespace World.Controllers
       return View();
     }
     [HttpPost("/cities")]
-    public ActionResult SearchCities(string citySearch, string comparison, string populationSearch)
+    public ActionResult SearchCities(string citySearch, string comparison, string populationSearch, string order)
     {
       int popSearch = int.Parse(populationSearch);
       string commandText = "";
@@ -31,7 +31,7 @@ namespace World.Controllers
       }
       else
       {
-        commandText = @"SELECT * FROM city WHERE population" + comparison + popSearch + ";";
+        commandText = @"SELECT * FROM city WHERE population" + comparison + popSearch + " ORDER BY population " + order + ";";
       }
       return View("Index", City.MakeList(commandText));
     }
