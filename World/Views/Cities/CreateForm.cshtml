@@ -1,0 +1,28 @@
+@{
+
+  Layout = "_Layout";
+}
+
+<h1>Search in Cities</h1>
+<form class="" action="/cities" method="post">
+  <div class="form-group">
+    <label for="citySearch">City search: </label>
+    <input type="text" name="citySearch" class="form-control">
+  </div>
+  <h3>OR</h3>
+  <div class="form-group">
+    <label for="populationSearch">Population search:</label>
+  </div>
+  <div class="radio">
+   <label>
+     <input type="radio" name="comparison" value=">=">
+     Greater or Equal
+   </label>
+   <label>
+     <input type="radio" name="comparison" value="<=">
+     Less Than or Equal
+   </label>
+   <input type="number" name="populationSearch" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-info">Search</button>
+</form>

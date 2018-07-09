@@ -5,11 +5,10 @@ body {
   font-size: 2em;
 }
 
-.header {
-  font-size: 5em;
-}
-
 h1 {
+  font-size: 4em;
+  color: black;
+  font-weight: bold;
   text-align: center;
   margin: 5%;
 }
@@ -34,10 +33,15 @@ h1 {
   padding: 1%;
 }
 
+.search {
+  margin-top: 10%;
+  font-size: .75em;
+}
+
 div#navbar {
   position: fixed;
-  top: 3%;
-  right: 3%;
+  top: 2%;
+  left: 2%;
   width: 20%;
-  text-align: right;
+  margin-bottom: 5%;
 }
