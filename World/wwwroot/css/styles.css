@@ -1,9 +1,43 @@
+body {
+  background: url('/img/map.png') no-repeat center fixed;
+  background-size: cover;
+  font-family: skia;
+  font-size: 2em;
+}
+
+.header {
+  font-size: 5em;
+}
+
 h1 {
   text-align: center;
-  margin-bottom: 5%;
+  margin: 5%;
 }
 
 .col-name {
   font-size: 1.5em;
   font-weight: bold;
+}
+
+.index-a {
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1%;
+}
+
+.index-a:hover {
+  color: #FFF;
+  background-color: black;
+  text-decoration: none;
+  padding: 1%;
+}
+
+div#navbar {
+  position: fixed;
+  top: 3%;
+  right: 3%;
+  width: 20%;
+  text-align: right;
 }
